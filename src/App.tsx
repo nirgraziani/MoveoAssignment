@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import UsersProvider from "./store/usersContext";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import UserDetails from "./components/UserDetails/UserDetails";
+import TablePage from "./components/TablePage/TablePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UsersProvider>
+      <Router basename="/">
+        <Routes>
+          <Route path="/allusers" element={<TablePage />} />
+          <Route path={`/userdetails/:username`} element={<UserDetails />} />
+          <Route path="*" element={<Navigate to="/allusers" />} />
+        </Routes>
+      </Router>
+    </UsersProvider>
   );
 }
 

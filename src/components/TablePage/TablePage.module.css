@@ -1,0 +1,10 @@
+.TablePage {
+  max-width: 50%;
+  margin: 100px auto;
+}
+
+.paginationContainer {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}

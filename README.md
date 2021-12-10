@@ -1,4 +1,4 @@
-# MoveoAssignment-
+# MoveoAssignment
 Moveo Assignment - Random users app
 Random users app using ReactJS [Random Users API](https://randomuser.me/api/)
 

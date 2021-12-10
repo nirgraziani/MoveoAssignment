@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# MoveoAssignment-
+Moveo Assignment - Random users app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Random users app using ReactJS [Random Users API](https://randomuser.me/api/)
 
-## Available Scripts
+With the following libraries:
 
-In the project directory, you can run:
+Styling: MUI
 
-### `npm start`
+Structuring: MUI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Routing: React-Router
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Data Source Communication: Axios
 
-### `npm test`
+Maps: Google Maps API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project uses ReactJS mainly for the reason that it is the framework I'm most comfortable with.
+I took your advice and used MUI and I found it to be easy to use.
+As you can see I chose not to use a Redux state management pattern because in my opinion that wwould be an overkill for this type of project, instead I decided to implement a Context/Provider (first time trying this).
+Routing & Data Source Communication were done with React-Router & Axios again, because these are libraries I'm familiar with.
 
-### `npm run build`
+The project contains the following components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`TablePage` component - Main page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`Header` component - Displays the page title
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`UserRow` component - Displays information of the user in a row format
 
-### `npm run eject`
+`UserDetails` component - Single user page, Displays information of the user
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`GoogleMaps` component - Displays user geo-location
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The home page displays a table with 10 users fetched from the [Pagination API](https://randomuser.me/api/?page=3&results=10&seed=abc) using the `onPaginationChange` event that is responsible for sending the current page number back to my context provider and changing the "page" section in the API call accordingly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+on clicking the row you will be redirected to "User Details" and additionally an object with the selected user will be sent back to the Context/Provider and will give me access to the selected user data in every component in the project.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+In the "User Details" page you'll find the same information about the selected (clicked) user in addition to a map (Google Maps API) with a marker pointing the coordinates from the selected user object.
 
-## Learn More
+Known issues:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. User Details page lose selected user data on refresh (no way to fetch a specific user through an API call)
+2. Not entirely responsive
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Prerequisites:
+Node.js
+
+How to run:
+
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm start`

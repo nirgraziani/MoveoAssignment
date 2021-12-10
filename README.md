@@ -17,7 +17,7 @@ Maps: Google Maps API
 
 This project uses ReactJS mainly for the reason that it is the framework I'm most comfortable with.
 I took your advice and used MUI and I found it to be easy to use.
-As you can see I chose not to use a Redux state management pattern because in my opinion that wwould be an overkill for this type of project, instead I decided to implement a Context/Provider (first time trying this).
+As you can see I chose not to use a Redux state management pattern because in my opinion that would be an overkill for this type of project, instead I decided to implement a Context/Provider (first time trying this).
 Routing & Data Source Communication were done with React-Router & Axios again, because these are libraries I'm familiar with.
 
 The project contains the following components:

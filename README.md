@@ -39,9 +39,9 @@ The project contains the following components:
 
 The home page displays a table with 10 users fetched from the [Pagination API](https://randomuser.me/api/?page=3&results=10&seed=abc) using the `onPaginationChange` event that is responsible for sending the current page number back to my context provider and changing the "page" section in the API call accordingly.
 
-on clicking the row you will be redirected to "User Details" and additionally an object with the selected user will be sent back to the Context/Provider and will give me access to the selected user data in every component in the project.
+on clicking the row you will be redirected to `User Details` and additionally an object with the selected user will be sent back to the Context/Provider and will give me access to the selected user data in every component in the project.
 
-In the "User Details" page you'll find the same information about the selected (clicked) user in addition to a map (Google Maps API) with a marker pointing the coordinates from the selected user object.
+In the `User Details` page you'll find the same information about the selected user in addition to a map with a marker pointing the coordinates from the selected user object.
 
 Known issues:
 
